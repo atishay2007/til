@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stage 2: JS Fundamentals</title>
+</head>
+<body>
+  <h1>Stage 2: JS Fundamentals</h1>
+  <p>Open the browser console or click below to test Rock Paper Scissors and the Quiz.</p>
+  <button onclick="runDemo()">Run Sample Round</button>
+  <pre id="output"></pre>
+
+  <script src="rps.js"></script>
+  <script src="quiz.js"></script>
+  <script>
+    function runDemo() {
+      const rps = playRound("rock");
+      const quiz = scoreQuiz([2, 1, 0]);
+      document.getElementById("output").textContent =
+        JSON.stringify({ rps, quiz }, null, 2);
+    }
+  </script>
+</body>
+</html>
