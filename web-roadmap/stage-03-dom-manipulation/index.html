@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stage 3: DOM To-Do List</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 520px; margin: 40px auto; padding: 0 16px; }
+    form { display: flex; gap: 8px; margin-bottom: 16px; }
+    input { flex: 1; padding: 8px; }
+    button { padding: 8px 14px; cursor: pointer; }
+    li { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #eee; }
+    .done { text-decoration: line-through; color: #777; }
+  </style>
+</head>
+<body>
+  <h1>Quick To-Do List</h1>
+  <form id="todo-form">
+    <input id="todo-input" type="text" placeholder="Add a task..." required>
+    <button type="submit">Add</button>
+  </form>
+  <p id="status">0 tasks remaining</p>
+  <ul id="todo-list"></ul>
+
+  <script src="app.js"></script>
+</body>
+</html>
