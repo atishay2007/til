@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stage 5: Async JS</title>
+</head>
+<body>
+  <h1>Stage 5: Async JS Demo</h1>
+  <button id="load-btn">Load Pune Weather &amp; USD to INR</button>
+  <pre id="out">Click the button to fetch live data...</pre>
+
+  <script src="weather.js"></script>
+  <script src="currency.js"></script>
+  <script>
+    document.getElementById("load-btn").addEventListener("click", async () => {
+      const out = document.getElementById("out");
+      out.textContent = "Loading...";
+      const [weather, inr] = await Promise.all([
+        fetchCityWeather(18.5204, 73.8567),
+        convertCurrency(10, "USD", "INR"),
+      ]);
+      out.textContent = JSON.stringify({ weather, usd10InInr: inr }, null, 2);
+    });
+  </script>
+</body>
+</html>
